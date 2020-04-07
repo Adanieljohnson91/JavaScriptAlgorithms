@@ -45,3 +45,4 @@ function naiveSearch(long,short){
 }
 const one = naiveSearch("this is a test hi hi hi hi", "hi");
 console.log(one);
+

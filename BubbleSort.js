@@ -3,7 +3,6 @@
 //Generally Bubble Sort is not optimal and doesnt have many usecases 
 const arr = [6,4,10,15, 2, 34, 189, 22, 8, 38]
 function bubbleSort(arr){
-    console.log(arr, "start")
     for(let i = arr.length; i>0; i--){
         for(let j = 0; j< i - 1; j++){
             if(arr[j]>arr[j+1]){
@@ -11,7 +10,6 @@ function bubbleSort(arr){
             }
         }
     }
-    console.log(arr, "end")
 }
 bubbleSort(arr);
 
