@@ -23,4 +23,4 @@ function sameFrequency(num1, num2){
    console.log(true)
     return true;
   }
-  sameFrequency(124,123)
+  sameFrequency(98654,89465)

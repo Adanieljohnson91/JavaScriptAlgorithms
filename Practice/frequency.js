@@ -21,7 +21,7 @@ function sameFrequency(num1,num2){
         }
         break;
     }
-    for(key in freqCount1){
+    for( let key in freqCount1){
         if(freqCount1[key] !== freqCount2[key]){
             console.log(false)
             return false
