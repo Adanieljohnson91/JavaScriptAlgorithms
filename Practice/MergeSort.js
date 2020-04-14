@@ -5,7 +5,7 @@ function mergeSort (unsortedArray) {
     }
     const middle = Math.floor(unsortedArray.length / 2);
   
-    const left = unsortedArray.slice(0, middle);
+    const left = unsortedArray.slice(0, middle); 
     const right = unsortedArray.slice(middle);
   
     // Using recursion to combine the left and right
@@ -28,12 +28,12 @@ function merge (left, right) {
         rightIndex++;
       }
     }
-    
+   
     let target = resultArray
             .concat(left.slice(leftIndex))
             .concat(right.slice(rightIndex));
            
             return target;
   }
- const sortedArray = mergeSort([0,1,4,3,2,76,6])
+ const sortedArray = mergeSort([5,1,4,3,2,76,6])
  console.log(sortedArray)
