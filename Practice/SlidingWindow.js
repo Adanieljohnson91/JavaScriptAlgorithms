@@ -8,7 +8,7 @@ function maxSubarraySum(arr, num){
 // Check all blocks starting with i, i = 0;
     for(let i = 0; i < n - num +1; i++){
          let temp = 0; 
-
+         
         for(let j = 0; j< num; j++){
             temp += arr[i + j];
         }
@@ -21,21 +21,21 @@ function maxSubarraySum(arr, num){
 const gVal = maxSubarraySum([0,1,3,4,6,3,2,7], 2)
 console.log(gVal)
 // Optimal Solution
-function maxSubarrayR(arr,num){
-    let maxSum = 0;
-    let tempSum = 0;
-    if(arr.length < num)return null;
-    for(let i = 0; i < num; i++){
-        maxSum += arr[i];
-    }
-    tempSum = maxSum;
-    for(let i = num; i < arr.length; i++){
-        tempSum = tempSum - arr[i-num] + arr[i];
-        maxSum = Math.max(maxSum, tempSum);
-    }
-    return maxSum;
-}
-
+// function maxSubarrayR(arr,num){
+//     let maxSum = 0;
+//     let tempSum = 0;
+//     if(arr.length < num)return null;
+//     for(let i = 0; i < num; i++){
+//         maxSum += arr[i];
+//     }
+//     tempSum = maxSum;
+//     for(let i = num; i < arr.length; i++){
+//         tempSum = tempSum - arr[i-num] + arr[i];
+//         maxSum = Math.max(maxSum, tempSum);
+//     }
+//     return maxSum;
+// }
+// maxSubarrayR([1,3,5,21,6,7,4], 2)
 // //Notes
 // /**
 //  * Identifying a problem that uses a sliding window paradigm
