@@ -8,7 +8,7 @@ function maxSubarraySum(arr, num){
 // Check all blocks starting with i, i = 0;
     for(let i = 0; i < n - num +1; i++){
          let temp = 0; 
-         
+
         for(let j = 0; j< num; j++){
             temp += arr[i + j];
         }
