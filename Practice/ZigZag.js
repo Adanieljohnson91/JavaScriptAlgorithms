@@ -47,6 +47,8 @@ var convertV2 = function (s, numRows) {
   console.log(result);
   return result;
 };
+
+
 convertV2("paypalishiring", 3);
 
 function convertV3(s, numRows) {

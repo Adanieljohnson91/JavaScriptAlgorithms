@@ -15,7 +15,7 @@ function longestPalindrome(string){
     }
     function slider(start, end){
         if(string[start]===string[end]&& end < string.length){
-            current = string.slice(start, end+1);
+            current = string.slice(start-1, end+1) > string.slice(start-1, end+1) ? string.slice(start-1, end+1) : string.slice(start-1, end+1)
             sMarker--
             eMarker++
             if(largest.length < current.length) {
@@ -77,4 +77,4 @@ function getLongestPalindrome(string, leftIndex, rightIndex){
     }
     return [leftIndex+1, rightIndex]
 }
-//longestPalindromeSubstring("aaaa");
+longestPalindromeSubstring("aaaa");

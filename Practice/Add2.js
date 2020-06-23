@@ -58,7 +58,7 @@
 //             counter = Math.min(i - dict[s[i]], counter + 1);
 //         }
 //         maxCounter = Math.max(maxCounter, counter);
-// //         dict[s[i]] = i; //save the index
+// //         dict[s[i]] = i; //save the i
 // //     }
 // //     console.log(maxCounter)
 // //     return maxCounter;
@@ -79,7 +79,7 @@
 //         }
 //         maxCount = Math.max(counter, maxCount)
 //         dictionary[string[i]] = i;
-       
+
 //     }
 //  //   console.log(maxCount)
 //     return maxCount
@@ -110,7 +110,7 @@
 // var fizzBuzz = function(n) {
 //     let arr = []
 //     for(let i = 1; i<= n; i++){
-    
+
 //         if( i % 3 === 0 && i % 5 === 0){
 //             console.log('hit')
 //             arr.push("FizzBuzz")
@@ -123,32 +123,78 @@
 //             arr.push(String(i))
 //         }
 //     }
- 
- 
+
+
 // };
 // fizzBuzz(1);
 
-0
-function twoNumberSum(array,targetSum) {
-let sorted = array.sort((a,b)=>{
-    return a - b
-});
-let left = 0;
-let right = sorted.length  -1
-while(left < right){
-    currentSum = sorted[left] + sorted[right]
-  
-    if(currentSum ===targetSum){
-        return [sorted[left], sorted[right]]
-    }else if(currentSum <targetSum){
-        left++
-    }else{
-        right--
+// 0
+// function twoNumberSum(nums,targetSum) {
+// let sorted = nums.sort((a,b)=>{
+//     return a - b
+// });
+// let left = 0;
+// let right = sorted.length  -1
+// while(left < right){
+//     currentSum = sorted[left] + sorted[right]
+
+//     if(currentSum ===targetSum){
+//         return [sorted[left], sorted[right]]
+//     }else if(currentSum <targetSum){
+// //         left++
+// //     }else{
+// //         right--
+// //     }
+// // }
+// // return []
+// // }
+// // twoNumberSum([2,13,4,-5,6], 10);
+
+// //taking in nums of nums
+// //to find a target
+// //Iterate over each number and add
+// [0, 1, 2, 3, 4, 5];
+
+
+
+// function addTwoNumbers(nums, target) {
+//     let obj = {};
+//     for(let i =0; i <nums.length; i++){ 
+//         if(obj[nums[i]] !== undefined){
+//             return [obj[nums[i]], i]
+//         } else {
+//              obj[target - nums[i]] = i;
+//         }
+//     }
+//     console.log('invalid');
+// }
+// addTwoNumbers([0, 1, 2, 3, 6], 7);
+
+//Add two numbers given an nums of numbers and a target numbners
+// return two indicies that equal the target.
+// need for loop, maybe nested, 
+
+function addTwoNumbers(nums, target){
+ let obj = {};
+ for (let i = 0; i < nums.length; i++) {
+     obj[Number(target - nums[i])] = i; 
+     if(obj[nums[i]] !== undefined) {
+         console.log(obj)
+        return [obj[nums[i]], i]
     }
+ }
+ return false;
 }
-return []
-}
-twoNumberSum([2,13,4,-5,6], 10);
+addTwoNumbers([3,5,7,6,3,2,8], 15);
+
+// {
+// '7': 6, 
+// '8': 2, 
+// '9': 3, 
+// '10': 1,
+// '12': 4,
+// '13': 5 
+// }
 
 
 
@@ -180,28 +226,31 @@ twoNumberSum([2,13,4,-5,6], 10);
 
 
 
-// var twoSum = function(array,targetSum) {
-//     if(array.length <= 1)return console.log('Empty sorted');
-    
-//     for(let i = 0; i < array.length; i++){
-//         for(let j = i+1; j < array.length; j++){
-          
-//             if(array[i]+array[j] ===targetSum){
-//                 console.log(array[i], array[j])
+
+
+
+// var twoSum = function(nums,targetSum) {
+//     if(nums.length <= 1)return console.log('Empty sorted');
+
+//     for(let i = 0; i < nums.length; i++){
+//         for(let j = i+1; j < nums.length; j++){
+
+//             if(nums[i]+nums[j] ===targetSum){
+//                 console.log(nums[i], nums[j])
 //                 return [[i],[j]]
 //             } 
 //         }
 //     }
-    
+
 // };
 // twoSum([0,2,3,4,5,6], 10);
 
-// const twoSum = function(array,targetSum) {
+// const twoSum = function(nums,targetSum) {
 //     const comp = {};
-//     for(let i=0; i<array.length; i++){
-//         if(comp[array[i]] !== undefined){
-//             return [comp[array[i]] , i]
+//     for(let i=0; i<nums.length; i++){
+//         if(comp[nums[i]] !== undefined){
+//             return [comp[nums[i]] , i]
 //         }
-//         comp[target-array[i]] = i;
+//         comp[target-nums[i]] = i;
 //     }
 // };
