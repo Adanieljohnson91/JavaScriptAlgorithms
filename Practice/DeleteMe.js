@@ -1,46 +1,27 @@
-class Node{
-    constructor(data, next = null){
-        this.data= data,
-        this.next = next
-    };
-}
-// function Node2(data, next = null){
-//     return {
-//         data,
-//         next
-//     }
-// }
-let example = new Node(300, new Node(400));
-console.log(example, "example");
-class LinkedList{
-    constructor(){
-        this.head = undefined,
-        this.size = 0;
- }
-     addNode(data){
-        this.head = new Node(data, this.head);
-        this.size++;
-    }
-    addLast(data){
-        if(this.head === undefined){
-            this.head = new Node(data, this.head);
-            this.size++;
-            return;
+var myAtoi = function(str) {
+    str.replace(/ /g);
+    console.log("str1", str)
+    if(str.length === 0)return 0;
+    let neg = 1;
+    let num = []
+    for(let i; i < str.length; i++){
+           let s = str[i]
+           if(s === "-"){
+               neg = -1
+           }
+        if(str[i] == +str[i]){
+            console.log("here", str[i])
+            num.push(str[i])
         }
-     let current = this.head;
-     while(current.next){
-         current = current.next;
-     }
-     current.next = new Node(data);
-     this.size++;
     }
-
-}
-let newLink = new LinkedList();
-newLink.addNode(300)
-newLink.addLast(500)
-newLink.addNode(400)
-newLink.addLast(600)
-console.log(newLink)
-console.log(newLink.head.next, "LINKED LIST END")
-// [Data1|| Pointer-->[Data||Pointer-->[Data|| Pointer or NULL]]]
+    console.log("str2", str, "num", num)
+    let result = Number(num.join("")) * neg
+    if(result > Math.pow(2,32)){
+        return Math.pow(2,32);
+    }else if(result <  Math.pow(2,31)*-1){
+        return Math.pow(2,31)*-1
+    }else{
+        return result
+    }
+};
+console.log(myAtoi("-4109 this is a test   "))
