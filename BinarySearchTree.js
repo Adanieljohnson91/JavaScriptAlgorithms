@@ -94,13 +94,34 @@ class BinarySearchTree {
 
 let bst = new BinarySearchTree();
 
-bst.insert(6)
-bst.insert(5)
-bst.insert(4)
-bst.insert(1)
-bst.insert(2)
-bst.insert(3)
-bst.insert(7)
-bst.insert(8)
-bst.inorder(bst.root);
-bst.getRootNode();
+// bst.insert(6)
+// bst.insert(5)
+// bst.insert(4)
+// bst.insert(1)
+// bst.insert(2)
+// bst.insert(3)
+// bst.insert(7)
+// bst.insert(8)
+// bst.inorder(bst.root);
+// bst.getRootNode();
+
+
+class lNode{
+    constructor(data, next = null){
+        this.data = data,
+        this.next = next
+    }
+}
+class LinkedList{
+    constructor(){
+        this.head = null;
+        this.size = 0;
+    }
+    insertFirst(data){
+        this.head = new lNode(data, this.head);
+    }
+}
+let linky = new LinkedList();
+linky.insertFirst(200);
+linky.insertFirst(300);
+console.log(linky);
