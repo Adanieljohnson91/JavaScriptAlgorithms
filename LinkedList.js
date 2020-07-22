@@ -17,7 +17,7 @@ Data and Next
 class Node {
     // Node Class, in the constructor we are storing the data value and the next value
     constructor(data, next = null){
-        this.data = data
+        this.data = data,
         this.next = next
     }
 }
@@ -98,7 +98,7 @@ class LinkedList {
     }
     // Remove at Index
     removeAt(index){
-        if(index > 0 && index > this.size){
+        if(index < 0 || index > this.size){
             return;
         }
         let current = this.head;
@@ -107,17 +107,16 @@ class LinkedList {
 
         if(index ===0 ){
             this.head = current.next
+            return;
         }else {
             while(count < index){
                 count++
                 previous = current;
                 current = current.next
             }
-        previous.next = current.next
-        
+        previous.next = current.next 
         }
         this.size--
-
     }
     //Clear List
     clearList(){
@@ -139,9 +138,10 @@ const linklist = new LinkedList()
 linklist.insertFirst(100);
 linklist.insertFirst(200);
 linklist.insertFirst(300);
-linklist.insertLast(400);
-//linklist.removeAt(2);
-linklist.insertAtIndex(250, 2);
-console.log(linklist.head.next.next.next)
-//linklist.printListData();
+linklist.insertFirst(400);
+linklist.insertFirst(500);
+linklist.insertFirst(600);
+ linklist.insertLast(700);
+linklist.removeAt(3);
+linklist.printListData();
 //linklist.getAt(2);

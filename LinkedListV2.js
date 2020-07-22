@@ -1,34 +1,35 @@
 class Node {
     constructor(data, next = null){
-        this.data = data,
-        this.next = next
+        this.data = data;
+        this.next = next;
     }
 }
-class LinkList {
+
+class LinkedList{
     constructor(){
-        this.head = null;
-        this.size = 0;
+        this.head = null,
+        this.tail = null,
+        this.size = 0
     }
-    addToLinkList(data){
-        this.head = new Node(data, this.head);
-        this.size++
+    insertFirst(data){
+        this.head = new Node(data, this.head)
     }
-    addToEnd(data){
+    insertLast(data){
         let node = new Node(data);
         let current;
         if(!this.head){
-            this.addToLinkList(data)
+            this.head = node;
         }else{
-            current = this.head
+            current = this.head;
             while(current.next){
-                current = current.next 
+            current = current.next
             }
             current.next = node;
         }
-        this.size++
     }
 }
-const linklistnodes = new LinkList()
-linklistnodes.addToLinkList({name:"anthony", last:"johnson"});
-linklistnodes.addToLinkList(200);
-console.log(linklistnodes);
+const linkedlist = new LinkedList();
+
+linkedlist.insertFirst(100)
+linkedlist.insertFirst(200)
+console.log(linkedlist.head);
